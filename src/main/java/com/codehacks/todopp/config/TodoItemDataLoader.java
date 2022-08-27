@@ -9,7 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TodoitemDataLoader implements CommandLineRunner {
+public class TodoItemDataLoader implements CommandLineRunner {
 
     private final Logger logger = LoggerFactory.getLogger(TodoItem.class);
 
