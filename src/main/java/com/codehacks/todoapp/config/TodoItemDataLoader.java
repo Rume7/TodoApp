@@ -1,7 +1,7 @@
-package com.codehacks.todopp.config;
+package com.codehacks.todoapp.config;
 
-import com.codehacks.todopp.models.TodoItem;
-import com.codehacks.todopp.repositories.TodoItemRepository;
+import com.codehacks.todoapp.models.TodoItem;
+import com.codehacks.todoapp.repositories.TodoItemRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

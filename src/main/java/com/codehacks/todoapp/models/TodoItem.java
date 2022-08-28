@@ -1,4 +1,4 @@
-package com.codehacks.todopp.models;
+package com.codehacks.todoapp.models;
 
 import lombok.Getter;
 import lombok.Setter;
