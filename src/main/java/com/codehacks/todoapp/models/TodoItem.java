@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.time.Instant;
 
 @Entity
@@ -16,6 +17,7 @@ public class TodoItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotBlank(message = "Description is required")
     private String description;
 
     private boolean complete;
@@ -37,6 +39,6 @@ public class TodoItem {
     public String toString() {
         return String.format("TodoItem{id=%d, description='%s', complete='%s', " +
                         "createdDate='%s', modifiedDate='%s'}", getId(), getDescription(),
-                isComplete(), getCreatedDate(), getModifiedDate());
+                isComplete(), getCreatedDate().toString().substring(0, 11), getModifiedDate().toString().substring(0, 10));
     }
 }

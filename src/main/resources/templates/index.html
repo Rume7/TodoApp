@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" >
-
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
@@ -10,8 +9,9 @@
     <body>
         <div class="container">
             <h1 class="text-center">Todo List</h1>
-            <hr width="8"/>
+            <hr />
 
+            <p th:text="|Happy ${today}|">Today</p>
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="item : ${todoItems}">
+                    <tr th:each="item : ${todoItems}" th:class="${item.complete} ? success : warning">
                         <td th:text="${item.id}">items_id</td>
                         <td th:text="${item.description}">description</td>
                         <td th:text="${item.complete}">item_complete</td>
@@ -36,9 +36,11 @@
                                 <a class="btn btn-danger" th:href="@{/delete/{id}(id=${item.id})}">Delete</a>
                             </div>
                         </td>
-                    </tr
+                    </tr>
                 </tbody>
             </table>
+
+            <p><a class="btn btn-success" href="/create-todo">Add a Todo</a> </p>
         </div>
 
         <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
